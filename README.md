@@ -21,6 +21,7 @@ The Proxmox Server is in charge of running containers. The server has 1 virtual 
 3. Uptime-Kuma
 4. Homarr
 #### Portainer
+![Portainer Dashboard](images/Image_45.png)
 I use Portainer to streamline my docker app installations so instead of relying solely on the docker CLI (Command Line Interface), I can do it all from the web UI (User Interface)
 #### Netdata
 ![Netdata Dashboard](images/Image_46.png)
