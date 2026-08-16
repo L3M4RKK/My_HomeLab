@@ -55,7 +55,7 @@ To setup my TrueNAS server I installed TrueNAS community edition ISO on a USB dr
 another drive. Then, I plugged the USB drive with the OS into the server as well as another USB drive to act as the boot drive for the server. After the installation was complete 
 and the server rebooted, I was able to see the IP address of the server to access the web UI. Then once I was in the web UI, I made a storage pool and used SMB to make it usable for network storage, afterwards I created storage volumes and then downloaded and deployed Immich and Netbird in the built in apps section of TrueNAS
 #### Proxmox Server
-Similar to the TrueNAS server, I had to install an ISO image on a USB drive and install the OS on another USB drive, and wait for the OS to install and the computer to reboot. 
+Similar to the TrueNAS server, I had to install an ISO image on a USB drive and install the OS on another USB drive, and wait for the OS to install and the computer to reboot, but to make virtual machines I had to enable virtualzations in my motherboard's BIOS.  
 Then afterwards, I would use the IP address shown in the terminal to login to the web UI. Afterwards, in the web UI I installed the OSs I was going to use for my virtual machines 
 and then configured my virtual machines with adequate specs.
 ###### NOTE: I do not recommend that you use USB drives as a boot device since they will wear out easily, I'm using them because I don't have other storage options.
