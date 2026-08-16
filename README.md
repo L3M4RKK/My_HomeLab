@@ -15,10 +15,10 @@ both Netbird for VPN (Virtual Private Network) access and Immich as a self hoste
 backup service.
 ### Proxmox Server
 The Proxmox Server is in charge of running containers. The server has 1 virtual machine with its main purpose being docker which has the following services:
-  1. Portainer
-  2. Netdata
-  3. Uptime-Kuma
-  4. Homarr
+1. Portainer
+2. Netdata
+3. Uptime-Kuma
+4. Homarr
 #### Portainer
 I use Portainer to streamline my docker app installations so instead of relying solely on the docker CLI (Command Line Interface), I can do it all from the web UI (User Interface)
 #### Netdata
@@ -67,6 +67,6 @@ the web UI I see an error message saying that my SSD was offline, to this day I 
 #### Proxmox Server
 1. Installation Type Error - When trying to download Proxmox I had to install a specific version of it since any other version would cause my PC to hard lock and not let me use any utility or command to shut down and try again
 2. Storage Error - One day after rebooting my server I see that my virtual machines weren't turning on, when I checked logs I see that it says that storage did not exist, so after realizing that I had to remount my drive so it was visible to Proxmox I was able to recreate my virtual machines and redownload my OSs and continue creating my homelab, I believe the issue was that I shutdown the server without shutting down the virtual machines which could've caused data to corrupt
-3. VLAN error / Network interface confusion - My original plan for the home lab was for it to include VLANs but as you will soon read that ended being a very difficult obstacle that I decided not to follow through with for now. I was originally intending to have another virtual machine act as a router using Pfsense so I could route traffic between VLANs, but I soon realized that not how things work, since the virtual machine was not connected to WAN, the interfaces for both WAN and LAN would be in the same subnet, so I attempted to use another IP address for the LAN interface and kept messing around with virtual network interfaces until I eventually gave up, I almost certain that the issue resides with having a router with the WAN set to the IP of my local network, though I would like to revisit this topic in the future if I can get my hands on a mini rack and more network hardware
+3. VLAN error / Network interface confusion - My original plan for the home lab was for it to include VLANs but as you will soon read that ended being a very difficult obstacle that I decided not to follow through with for now. I was originally intending to have another virtual machine act as a router using Pfsense so I could route traffic between VLANs, but I soon realized that not how things work, since the virtual machine only had 1 NIC (Network Interface Card), the interfaces for both WAN and LAN would be in the same subnet, so I attempted to use another IP address for the LAN interface and kept messing around with virtual network interfaces configurations, like adding other Virtual NICs  until I eventually gave up, I'm almost certain that the issue resides with having a router with the WAN set to the IP of my local network as well as having only 1 NIC. I would like to revisit this topic in the future if I can get my hands on a mini rack and more network hardware
 
 ###### NOTE: A lot of troubleshooting was made easier thanks to Claude AI and Google searches
